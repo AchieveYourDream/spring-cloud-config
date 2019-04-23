@@ -20,9 +20,9 @@ eureka:
     service-url:
       defaultZone: http://eureka01:7001/eureka/,http://eureka02:7002/eureka/
   instance:
-  #×¢²áÃû³Æ
+  #æ³¨å†Œåç§°
     instance-id: msf-provider
-  #×¢²áÏÔÊ¾ip
+  #æ³¨å†Œæ˜¾ç¤ºip
     prefer-ip-address: true
 info:
  app.name: msf-provider
