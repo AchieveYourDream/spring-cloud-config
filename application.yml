@@ -1,16 +1,29 @@
 server:
-  port: 3344
+  port: 8081
 
+mybatis:
+  mapper-locations: classpath*:com/wb/**/mapper/*Mapper.xml
+  configuration:
+      map-underscore-to-camel-case: true
 spring:
   application:
-    name: msf-config
+    name: msf-provider
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://127.0.0.1:3306/msf?useUnicode=true&characterEncoding=utf-8
     username: root
     password: 123456
-  cloud:
-    config:
-      server:
-        git:
-          url: git@github.com:AchieveYourDream/spring-cloud-config.git
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka01:7001/eureka/,http://eureka02:7002/eureka/
+  instance:
+  #×¢²áÃû³Æ
+    instance-id: msf-provider
+  #×¢²áÏÔÊ¾ip
+    prefer-ip-address: true
+info:
+ app.name: msf-provider
+ company.name: wangbin
